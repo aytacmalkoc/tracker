@@ -2,6 +2,8 @@
 
 namespace Aytacmalkoc\Tracker;
 
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 class Tracker
@@ -21,14 +23,12 @@ class Tracker
      */
     public function getGeoInformation(string $ip, string $identifier): object
     {
-        return get_geo($ip, $identifier);
-    }
+        $fields = config('tracker.geo.fields');
 
-    /**
-     * @return object
-     */
-    public static function geo(): object
-    {
-        return get_geo(request()->ip());
+        return (object) Cache::rememberForever('trackerapp-geo-' . $identifier ?: $ip, function() use($ip, $fields) {
+            return Http::get("http://ip-api.com/json/$ip", [
+                'fields' => implode(',', $fields),
+            ])->object();
+        });
     }
 }

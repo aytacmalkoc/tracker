@@ -1,16 +1,35 @@
-# Tracker
+## Installation
 
-Bu paket siteyi ziyaret eden kullanıcıların bilgilerini toplamak ve analiz etmek için geliştirilmiştir.
+Install package using composer
+```bash
+composer require aytacmalkoc/tracker
+```
 
-## Dökümantasyon
+Run artisan's migrate command
+```bash
+php artisan migrate
+```
 
-Tracker paketinin tüm işleyişine dair dökümantasyona [buradan](https://github.com/attelia/tracker/blob/main/docs/introduction.md) ulaşabilirsiniz.
+Publish assets
+```bash
+php artisan vendor:publish --tag=tracker::assets
+```
 
-## Katkı Sağlayanlar
+If you need the customization package, export config file
+```bash
+php artisan vendor:publish --tag=tracker::config
+```
 
--   [Aytac Malkoc](https://github.com/aytacmalkoc)
--   [Aras Şanıvar](https://github.com/arasattelia)
+Add @trackerScript directive to top of head tag
+```html
+<head>
+    @trackerScript
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+```
 
-## Lisans
+## License
 
-The GNU GPLv3. Lütfen [Lisans](LICENSE.md) dosyasını inceleyin.
+MIT License. Please check [license](LICENSE.md) file.

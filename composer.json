@@ -27,10 +27,7 @@
             "Aytacmalkoc\\Tracker\\": "src",
             "Aytacmalkoc\\Tracker\\Controllers\\": "Controllers",
             "Aytacmalkoc\\Tracker\\Models\\": "Models"
-        },
-        "files": [
-            "src/helpers.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
