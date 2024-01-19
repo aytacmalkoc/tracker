@@ -1,0 +1,58 @@
+{
+    "name": "aytacmalkoc/tracker",
+    "description": "Track users",
+    "keywords": [
+        "tracker"
+    ],
+    "homepage": "https://github.com/aytac/tracker",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Aytac Malkoc",
+            "email": "aytacmalkoc@protonmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "jenssegers/agent": "^2.6"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aytacmalkoc\\Tracker\\": "src",
+            "Aytacmalkoc\\Tracker\\Controllers\\": "Controllers",
+            "Aytacmalkoc\\Tracker\\Models\\": "Models"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Aytacmalkoc\\Tracker\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aytacmalkoc\\Tracker\\TrackerServiceProvider"
+            ],
+            "aliases": {
+                "Tracker": "Aytacmalkoc\\Tracker\\TrackerFacade"
+            }
+        }
+    }
+}

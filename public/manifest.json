@@ -1,0 +1,13 @@
+{
+  "_vendor-2a577c8c.js": {
+    "file": "js/vendor-2a577c8c.js"
+  },
+  "resources/js/tracker.js": {
+    "file": "js/tracker-f851144e.js",
+    "imports": [
+      "_vendor-2a577c8c.js"
+    ],
+    "isEntry": true,
+    "src": "resources/js/tracker.js"
+  }
+}
