@@ -20,10 +20,11 @@ If you need the customization package, export config file
 php artisan vendor:publish --tag=tracker::config
 ```
 
-Add @trackerScript directive to top of head tag
+Add @trackerScript directive and csrf token to top of head tag
 ```html
 <head>
     @trackerScript
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
