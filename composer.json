@@ -7,6 +7,8 @@
     "homepage": "https://github.com/aytac/tracker",
     "license": "MIT",
     "type": "library",
+    "minimum-stability": "stable",
+    "version": "v1.0.0",
     "authors": [
         {
             "name": "Aytac Malkoc",
